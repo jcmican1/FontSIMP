@@ -18,7 +18,7 @@ import { ProductoMateriaPrimaModel } from 'src/app/Modelos/Producto_Materia_Prim
   providedIn: 'root'
 })
 export class UsuariosService {
-  url = 'https://simp-production.up.railway.app';
+  url = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
