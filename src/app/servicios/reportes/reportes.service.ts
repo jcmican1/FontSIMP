@@ -6,7 +6,7 @@ import { ReportesModel } from 'src/app/Modelos/Reportes.model';
   providedIn: 'root'
 })
 export class ReportesService {
-  url = 'http://localhost:3000';
+  url = 'https://backendsimp-production.up.railway.app';
   constructor(private http: HttpClient) { }
 
   obtenerReportes() {
