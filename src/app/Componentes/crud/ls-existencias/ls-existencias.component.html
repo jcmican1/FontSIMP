@@ -1,20 +1,21 @@
 <main class="container mt-4">
     <div class="container border p-4">
-        <h1>Existencias</h1>
+        <h1 class="text-center">Existencias</h1>
 
-        <div class="m-3 container text-center row justify-content-md-center">
-            <div class="ZonaBotones container col-lg-8">
-                <button class="btn btn-success" type="button" [routerLink]="['/movimiento/agregar']"> <img src="./assets/Imagenes/agregar.png" alt="Añadir item"> Agregar</button>
+        <div class="row justify-content-center mb-3">
+            <div class="col-lg-8">
+                <button class="btn btn-success" type="button" [routerLink]="['/movimiento/agregar']">
+                    <img src="./assets/Imagenes/agregar.png" alt="Añadir item"> Agregar
+                </button>
             </div>
-            <div class="col-lg-4">
-            </div>
+            <div class="col-lg-4"></div>
         </div>
 
-        <div class="TablaTrabajo container table-responsive">
+        <div class="table-responsive">
             <table class="table table-dark table-sm">
-                <thead class="thead-dark">
+                <thead>
                     <tr>
-                       <!--  <th>ID Existencias</th> -->
+                        <!-- <th>ID Existencias</th> -->
                         <th>Cantidad Existencias</th>
                         <th>Punto de Compra</th>
                         <th>Fecha Ultima Modificación</th>
@@ -24,26 +25,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <ng-container *ngIf="existencias.length > 0; else noDataMessage">
-                    <tr *ngFor="let ex of existencias">
-                        <!-- <td>{{ ex.IdExistencias }}</td> -->
-                        <td>{{ ex.CantidadExistencias }}</td>
-                        <td>{{ ex.PuntoCompraProducto }}</td>
-                        <td>{{ ex.FechaUltimaModificacionFormateada }}</td>
-                        <td>{{ ex.NombreProducto }}</td>
-                        <td>
-                            <a class="btn btn-warning" [routerLink]="['/existencias/editar/', ex.IdExistencias]">Editar</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-danger" (click)="borrarExistencias(ex.IdExistencias)">Borrar</a>
-                        </td>
-                    </tr>
-                  </ng-container>
-                  <ng-template #noDataMessage>
-                    <tr>
-                      <td colspan="9">{{messageError}}</td>
-                    </tr>
-                  </ng-template>
+                    <ng-container *ngIf="existencias.length > 0; else noDataMessage">
+                        <tr *ngFor="let ex of existencias">
+                            <!-- <td>{{ ex.IdExistencias }}</td> -->
+                            <td>{{ ex.CantidadExistencias }}</td>
+                            <td>{{ ex.PuntoCompraProducto }}</td>
+                            <td>{{ ex.FechaUltimaModificacionFormateada }}</td>
+                            <td>{{ ex.NombreProducto }}</td>
+                            <td>
+                                <a class="btn btn-warning" [routerLink]="['/existencias/editar/', ex.IdExistencias]">Editar</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" (click)="borrarExistencias(ex.IdExistencias)">Borrar</a>
+                            </td>
+                        </tr>
+                    </ng-container>
+                    <ng-template #noDataMessage>
+                        <tr>
+                            <td colspan="6" class="text-center">{{messageError}}</td>
+                        </tr>
+                    </ng-template>
                 </tbody>
             </table>
         </div>
