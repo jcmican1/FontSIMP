@@ -1,0 +1,14 @@
+.graficos {
+    display: flex;
+    justify-content: space-between; /* Distribuye las columnas uniformemente */
+  }
+  
+  .columna {
+    flex-basis: calc(50% - 20px ); /* El ancho de cada columna es del 50% del contenedor con un espacio de 10px entre ellas */
+  }
+  
+  canvas {
+    width: 100%; /* Ajusta el ancho del canvas al 100% del contenedor */
+    height: auto; /* La altura se ajustará automáticamente según el ancho */
+  }
+  

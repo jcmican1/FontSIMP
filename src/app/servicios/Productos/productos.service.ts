@@ -9,7 +9,7 @@ import { ProductoMateriaModel } from 'src/app/Modelos/Producto_Materia.model';
   providedIn: 'root'
 })
 export class ProductosService {
-  url = 'https://backendsimp-production.up.railway.app';
+  url = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 

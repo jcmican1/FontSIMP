@@ -1,28 +1,13 @@
 <main class="container mt-4">
-    <div class="container border p-4">
-        <h1>Producto mas usado</h1>
-        <div class="m-3 container text-center row justify-content-md-center">
-
-        </div>
-        <div class="TablaTrabajo container table-responsive">
-            <table class="table table-dark table-sm">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Producto Materia Prima</th>
-                        <th>Total usado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  
-                    <tr *ngFor="let re of ReportesModel | async ">                      
-                        <td>{{ re.NombreProducto }}</td>
-                        <td>{{ re.TotalVendido }}</td>
-                    
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
+    <div class="graficos">
+      <div class="columna">
+        <h2>Producto Más Vendido</h2>
+        <canvas id="barChart" width="450" height="450"></canvas>
+      </div>
+      <div class="columna">
+        <h2>Producto Menos Vendido</h2>
+        <canvas id="barChart2" width="450" height="450"></canvas>
+      </div>
     </div>
-</main>
-
+  </main>
+  
