@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ReportesService {
-  url = 'http://localhost:3000';
+  url = 'https://backendsimp-production.up.railway.app';
   constructor(private http: HttpClient) { }
 
   obtenerProductoMasVendido(): Observable<any> {
