@@ -23,6 +23,7 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.9.41",
     "@angular-devkit/build-angular": "^16.0.3",
     "@angular/cli": "~16.0.3",
     "@angular/compiler-cli": "^16.0.0",
