@@ -1,5 +1,5 @@
-<main class="container mt-4" style="background-color: #061727;">
-  <div class="card" style="border-color: #FEFBD2;">
+<main class="container mt-4">
+  <div class="card">
     <h5 class="card-header">Actualizar Movimiento</h5>
     <div class="card-body">
       <form [formGroup]="movimientoForm" (ngSubmit)="onSubmit()">
@@ -14,18 +14,22 @@
         </div>
 
         <div class="mb-3">
-          <label for="cantidadProducto" class="form-label">Cantidad de Producto (g) o (u):</label>
+          <label for="cantidadProducto" class="form-label">Cantidad de Producto:</label>
           <input type="number" id="cantidadProducto" formControlName="cantidadProducto" class="form-control">
         </div>
 
         <div class="mb-3">
-          <label for="idMotivo" class="form-label">Contexto(1-Compra,2-Venta,-3-Devolución):</label>
-          <input type="number" id="idMotivo" formControlName="idMotivo" class="form-control">
+          <label for="idMotivo" class="form-label">Motivo del Movimiento:</label>
+          <select formControlName="idMotivo" class="form-select">
+            <option *ngFor="let motivo of motivos" [value]="motivo.IdMotivo">{{ motivo.DescripcionMovimiento }}</option>
+          </select>
         </div>
 
         <div class="mb-3">
-          <label for="idProductoMateriaPrima" class="form-label">Materia Prima:</label>
-          <input type="number" id="idProductoMateriaPrima" formControlName="idProductoMateriaPrima" class="form-control">
+          <label for="idProductoMateriaPrima" class="form-label">Producto/Materia Prima:</label>
+          <select formControlName="idProductoMateriaPrima" class="form-select">
+            <option *ngFor="let producto of productos" [value]="producto.IdProductoMateriaPrima">{{ producto.NombreProducto }}</option>
+          </select>
         </div>
 
         <div class="mb-3">
@@ -39,3 +43,10 @@
             <option value="Entrada">Entrada</option>
             <option value="Salida">Salida</option>
           </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </form>
+    </div>
+  </div>
+</main>
