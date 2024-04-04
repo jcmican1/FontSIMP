@@ -1,6 +1,6 @@
 <main class="container mt-4" style="background-color: #061727;">
   <div class="card" style="border-color: #FEFBD2;">
-    <h5 class="card-header" style="color: #FEFBD2;">Actualizar Movimiento</h5>
+    <h5 class="card-header">Actualizar Movimiento</h5>
     <div class="card-body">
       <form [formGroup]="movimientoForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
@@ -19,7 +19,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="idMotivo" class="form-label">Contexto:</label>
+          <label for="idMotivo" class="form-label">Contexto(1-Compra,2-Venta,-3-Devolución):</label>
           <input type="number" id="idMotivo" formControlName="idMotivo" class="form-control">
         </div>
 
