@@ -27,8 +27,10 @@
           </fieldset>
           <fieldset class="form-group" style="border: 1px solid white;">
             <div class="col-sm-12">
-                <label for="IdProductoMateriaPrima" style="color: #FEFBD2;">ID Materia Prima</label>
-                <input type="text" class="form-control" required [(ngModel)]="movimiento.IdProductoMateriaPrima" name="IdProductoMateriaPrima">
+                <label for="IdProductoMateriaPrima">ID Materia Prima</label>
+              <select class="form-control" required [(ngModel)]="movimiento.IdProductoMateriaPrima" name="IdProductoMateriaPrima">
+                <option *ngFor="let producto of productos" [value]="producto.IdProductoMateriaPrima">{{ producto.NombreProducto }}</option>
+              </select>
             </div>
           </fieldset>
           <fieldset class="form-group" style="border: 1px solid white;">
